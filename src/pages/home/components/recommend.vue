@@ -59,7 +59,7 @@ export default {
       line-height .44rem
       padding 0 .2rem
       background #ff9300
-      color #fff
+      color $white
       margin-top .5rem
       font-size .3rem
       border-radius .06rem
