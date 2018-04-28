@@ -1,16 +1,15 @@
 <template>
   <div>
-    <div class="title">周末去哪儿</div>
+    <div class="title">热销推荐</div>
     <ul>
       <li
         class="item border-bottom"
-        v-for="item in recommendList"
+        v-for="item in list"
         :key="item.id">
         <img :src="item.imgUrl" class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
-          <p class="item-desc">评价</p>
-          <p class="item-loc">{{item.location}}</p>
+          <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
       </li>
@@ -21,35 +20,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1612/8e/8e975801deb55d2fa3.water.jpg_200x200_ec0d5cd1.jpg',
-          title: '李小龙乐园',
-          location: '顺德区'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1612/8e/8e975801deb55d2fa3.water.jpg_200x200_ec0d5cd1.jpg',
-          title: '李小龙乐园',
-          location: '顺德区'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1612/8e/8e975801deb55d2fa3.water.jpg_200x200_ec0d5cd1.jpg',
-          title: '李小龙乐园',
-          location: '顺德区'
-        },
-        {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1612/8e/8e975801deb55d2fa3.water.jpg_200x200_ec0d5cd1.jpg',
-          title: '李小龙乐园',
-          location: '顺德区'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -82,10 +54,7 @@ export default {
       margin-top .2rem
       line-height .3rem
       font-size .26rem
-    .item-loc
-      position absolute
-      bottom .2rem
-      right .2rem
+      ellipsis()
     .item-button
       line-height .44rem
       padding 0 .2rem

@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="item in recommendList"
+        v-for="item in list"
         :key="item.id">
         <div class="item-img-wrapper">
           <img :src="item.imgUrl" class="item-img">
@@ -21,35 +21,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1508/f8/cadd4e229d3402.jpg_r_640x214_c38fb221.jpg',
-          title: '佛山必游TOP10',
-          desc: '走进佛山河网密布，生态优美的岭南水乡'
-        },
-        {
-          id: '0002',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1508/f8/cadd4e229d3402.jpg_r_640x214_c38fb221.jpg',
-          title: '佛山必游TOP10',
-          desc: '走进佛山河网密布，生态优美的岭南水乡'
-        },
-        {
-          id: '0003',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1508/f8/cadd4e229d3402.jpg_r_640x214_c38fb221.jpg',
-          title: '佛山必游TOP10',
-          desc: '走进佛山河网密布，生态优美的岭南水乡'
-        },
-        {
-          id: '0004',
-          imgUrl: 'http://img1.qunarzz.com/sight/source/1508/f8/cadd4e229d3402.jpg_r_640x214_c38fb221.jpg',
-          title: '佛山必游TOP10',
-          desc: '走进佛山河网密布，生态优美的岭南水乡'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -57,7 +30,6 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
 .title
-  margin-top .2rem
   line-height .8rem
   background #eee
   text-indent .2rem
